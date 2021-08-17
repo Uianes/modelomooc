@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="Experimento - Cores">
+
+<head>
+    <title>Experimento</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        function esconder() {
+            document.getElementById('proximo').style.display = "none"
+        }
+    </script>
+</head>
+
+<body onload="esconder()">
+    <div class="container-fluid p-5">
+        <div class="row">
+            <div class="col-12 h1 text-center">Experimento das cores:</div>
+            <div class="col-12 h5 text-center">
+                Faça o experimento de mistura das cores e preencha as respostas corretamente!
+            </div>
+            <br><br><br>
+            <div class="col-4">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header text-center">Amarelo</div>
+                    <div class="card-body" style="background-color: yellow;">
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 h1 text-center">
+                +
+            </div>
+            <div class="col-4">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header text-center">Azul</div>
+                    <div class="card-body" style="background-color: blue;">
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 pt-3 text-center">
+                <form id="formulario">
+                    <div class="form-group">
+                        <label for="resposta">Resposta:</label>
+                        <input type="text" class="form-control" id="resposta" placeholder="Escreva sua resposta:">
+                        <small id="feedback"></small>
+                    </div>
+                    <button type="button" id="btnresposta" onclick="questao()" class="btn btn-dark">Enviar!</button>
+                    <a href="3.html"><button type="button" id="proximo" class="btn btn-dark">Próximo</button></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Script da seleção das cores-->
+    <script>
+        function questao() {
+            var resposta = document.getElementById('resposta').value
+            resposta = resposta.toUpperCase()
+            document.getElementById('proximo').style.display = "inline-block"
+            document.getElementById('btnresposta').style.display = "none"
+            if (resposta == "VERDE") {
+                document.getElementById('feedback').innerHTML = `Parabéns! Você acertou, Amarelo + Azul = <span style="color: green">Verde!</span>`
+            } else {
+                document.getElementById('feedback').innerHTML = `Ops! Tenha cuidado: Amarelo + Azul = <span style="color: green">Verde!</span>`
+            }
+        }
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
